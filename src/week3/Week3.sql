@@ -1,5 +1,5 @@
 -- #1. ‘Corporate’ branch에 해당하는 모든 사원의 이름, 기존 급여, 10% 증가된 급여를 출력하라.
-SELECT first_name, last_name, salary, salary * 1.1 AS increased_salary FROM employee JOIN branch ON employee.branch_id = branch.branch_id;
+SELECT first_name, last_name, salary, salary * 1.1 AS increased_salary FROM employee JOIN branch ON employee.branch_id = branch.branch_id AND branch.branch_name = 'Corporate';
 
 -- #2. 급여가 60,000에서 80,000 사이에 있는 모든 남자 사원의 이름, 급여를 출 력하라.
 SELECT first_name, last_name, salary FROM employee WHERE sex = "M" AND salary BETWEEN 60000 AND 80000;
