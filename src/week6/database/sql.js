@@ -34,6 +34,11 @@ export const selectSql = {
     const [result] = await promisePool.query(sql);
     return result;
   },
+  getClass: async () => {
+    const sql = `select * from class`;
+    const [result] = await promisePool.query(sql);
+    return result;
+  },
 };
 
 // insert query
@@ -54,9 +59,20 @@ export const updateSql = {
     console.log(data);
     const sql = `
             UPDATE Student 
-            SET Id = ${data.Id}, Name = "${data.Name}", 
-                Email = "${data.Email}", PhoneNumber = "${data.PhoneNumber}",
-                Major = "${data.Major}"
+            SET id = ${data.Id}, name = "${data.Name}", 
+                email = "${data.Email}", phone_number = "${data.PhoneNumber}",
+                major = "${data.Major}"
+            WHERE id = ${data.Id}`;
+    console.log(sql);
+    await promisePool.query(sql);
+  },
+  updateDepartment: async (data) => {
+    console.log(data);
+    const sql = `
+            UPDATE Department 
+            SET id = ${data.Id}, email = "${data.Email}", 
+                phone_number = "${data.PhoneNumber}",
+                major_id = "${data.MajorId}"
             WHERE Id = ${data.Id}`;
     console.log(sql);
     await promisePool.query(sql);
