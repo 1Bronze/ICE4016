@@ -2,10 +2,10 @@
   "name": "ice4016",
   "version": "1.0.0",
   "description": "",
-  "main": "src/week5/index.js",
+  "main": "src/week6/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node src/week5/index.js"
+    "start": "nodemon --exec babel-node src/week6/index.js"
   },
   "repository": {
     "type": "git",
