@@ -18,6 +18,11 @@ export const selectSql = {
     const [result] = await promisePool.query(sql);
     return result;
   },
+  getStudentInfo: async (data) => {
+    const sql = `select * from student where student.id="${data}"`;
+    const [result] = await promisePool.query(sql);
+    return result[0];
+  },
   getParticipateClass: async (data) => {
     const sql = `select class.id, class.name, class.professor from student_in_class join class on student_in_class.class_id=class.id where student_in_class.student_id=${data}`;
     const [result] = await promisePool.query(sql);

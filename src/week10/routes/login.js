@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
                     location.href='/';
                 </script>`)
     } else if (req.session.user.checkLogin && req.session.user.role === 'student') {
-        res.redirect('/delete');
+        res.redirect('/info');
     }
 });
 

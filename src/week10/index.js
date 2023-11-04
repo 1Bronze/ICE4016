@@ -4,6 +4,7 @@ import path from "path";
 import expressSession from "express-session";
 
 import loginRouter from "./routes/login";
+import infoRouter from "./routes/info";
 import deleteRouter from "./routes/delete";
 
 const PORT = 3000;
@@ -27,7 +28,8 @@ app.set('view engine', 'hbs');
 app.use(logger('dev'));
 
 app.use('/', loginRouter);
-app.use('/delete', deleteRouter);
+app.use('/info', infoRouter);
+app.use('/delete/class', deleteRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`)

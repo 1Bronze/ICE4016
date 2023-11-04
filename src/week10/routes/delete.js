@@ -24,7 +24,7 @@ router.post('/', async (req, res) => {
 
     await deleteSql.deleteClass(data);
 
-    res.redirect('/delete');
+    res.redirect('/delete/class');
 });
 
 module.exports = router;
